@@ -6,7 +6,7 @@
 /*   By: ple- <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 11:37:37 by ple-              #+#    #+#             */
-/*   Updated: 2022/12/20 19:29:00 by ple-             ###   ########.fr       */
+/*   Updated: 2022/12/21 17:10:01 by ple-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_printf(const char *format, ...)
 
 	i = 0;
 	total_length = 0;
-	va_start(args, str);
+	va_start(args, format);
 	while (format[i])
 	{
 		if (format[i] == '%')
@@ -58,11 +58,9 @@ int	ft_printf(const char *format, ...)
 			i++;
 		}
 		else
-			total_length =+ ft_print_char(format[i]);
+			total_length += ft_print_char(format[i]);
 		i++;
 	}
 	va_end(args);
 	return (total_length);
 }
-
-
